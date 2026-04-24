@@ -10,6 +10,8 @@
 - `services/api`: NestJS API 服务
 
 ## 快速启动
+> 注意: 首次安装 Docker Desktop 需要管理员权限。
+
 ### 方式一: 一键脚本（推荐，Windows）
 1. 直接执行
    - `./start-dev.ps1`
@@ -18,6 +20,8 @@
    - `pnpm run dev:up`
 3. 已安装依赖时快速启动
    - `pnpm run dev:up:fast`
+4. 仅启动前端（不依赖 Docker）
+   - `pnpm run dev:up:web`
 
 ### 方式二: 手动启动
 1. 安装依赖

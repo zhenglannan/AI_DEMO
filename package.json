@@ -1,0 +1,16 @@
+{
+  "name": "modern-admin-platform",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.2.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "dev:web": "pnpm --filter admin dev",
+    "dev:api": "pnpm --filter api dev",
+    "build": "pnpm -r build",
+    "dev:up": "powershell -ExecutionPolicy Bypass -File ./start-dev.ps1",
+    "dev:up:fast": "powershell -ExecutionPolicy Bypass -File ./start-dev.ps1 -SkipInstall",
+    "dev:up:web": "powershell -ExecutionPolicy Bypass -File ./start-dev.ps1 -FrontendOnly",
+    "dev:down": "powershell -ExecutionPolicy Bypass -File ./stop-dev.ps1"
+  }
+}
