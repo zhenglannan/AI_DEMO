@@ -1,0 +1,72 @@
+// ============================================================
+// Mixins & Placeholders
+// ============================================================
+
+// ---------- Layout ----------
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// ---------- Glass morphism card ----------
+@mixin glass-card($blur: 10px, $bg: $color-bg-glass) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+  border-radius: $radius-xl;
+  box-shadow: 0 8px 32px $color-shadow-md;
+}
+
+// ---------- Hover lift ----------
+@mixin hover-lift($y: -3px) {
+  transition: transform $transition-normal, box-shadow $transition-normal;
+
+  &:hover {
+    transform: translateY($y);
+    box-shadow: 0 16px 40px $color-shadow-md;
+  }
+}
+
+// ---------- Responsive ----------
+@mixin mobile {
+  @media (max-width: 768px) { @content; }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) { @content; }
+}
+
+// ---------- Text truncate ----------
+@mixin truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// ---------- Scrollbar ----------
+@mixin scrollbar($width: 4px, $color: $color-border) {
+  &::-webkit-scrollbar { width: $width; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: $color; border-radius: $radius-full; }
+}
+
+// ---------- Animation helpers ----------
+@mixin fade-in-up($duration: 0.4s, $delay: 0s) {
+  animation: fade-in-up $duration ease $delay both;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
