@@ -2,6 +2,8 @@
 // Mixins & Placeholders
 // ============================================================
 
+@use './variables' as *;
+
 // ---------- Layout ----------
 @mixin flex-center {
   display: flex;
